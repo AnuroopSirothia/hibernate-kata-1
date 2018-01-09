@@ -40,10 +40,8 @@ public class UpdateStudentDemo {
 			
 			session.beginTransaction();
 			
-			Student mergedStudent = (Student)session.merge(student);
-			
-			// Update student email
-			mergedStudent.setEmail("anuroop@gmail.com"); // This update will not work.
+			// Update all student emails to foo@gmail.com
+			session.createQuery("UPDATE Student SET email = 'foo@gmail.com'").executeUpdate();
 			
 			// commit the transaction
 			session.getTransaction().commit();
