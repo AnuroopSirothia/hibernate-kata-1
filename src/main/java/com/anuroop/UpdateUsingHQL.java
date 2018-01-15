@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import com.anuroop.entity.Student;
 
 
-public class UpdateStudentDemo {
+public class UpdateUsingHQL {
 
 	public static void main(String[] args) {
 
@@ -30,7 +30,6 @@ public class UpdateStudentDemo {
 			
 			Student student = session.get(Student.class, id);
 			System.out.println("DEBUG: " + student);
-//			student.setEmail("anuroop.sirothia@gmail.com");
 			
 			// commit transaction
 			session.getTransaction().commit();
